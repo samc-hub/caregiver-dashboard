@@ -2,25 +2,60 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #3f3c45;
+  --card: #faf5f5;
+  --muted: #5a4f72;
+  --border: #ecdede;
+
+  --accent: #117143;
+  --accent-soft: #b49fe3;
+  --accent-ink: #243000;
+  --accent-blue: #5b8fb0;
+
+  --surface-muted: #f3eaea;
+  --surface-rose: #f5eded;
+  --surface-lavender: #f2ecff;
+  --surface-sky: #eafeff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-blue: var(--accent-blue);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-rose: var(--surface-rose);
+  --color-surface-lavender: var(--surface-lavender);
+  --color-surface-sky: var(--surface-sky);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-fragment-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: color-mix(in oklab, var(--accent-soft) 45%, transparent);
+  color: var(--foreground);
+}
+
+.eyebrow {
+  font-family: var(--font-fragment-mono), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
