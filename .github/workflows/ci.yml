@@ -31,9 +31,3 @@ jobs:
 
       - name: Test
         run: npm run test:run
-
-      - name: Build
-        env:
-          NEXT_PUBLIC_SANITY_PROJECT_ID: ci-project
-          NEXT_PUBLIC_SANITY_DATASET: ci
-        run: npm run build

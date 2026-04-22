@@ -36,7 +36,7 @@ sanity/
     types.ts            shared content types
 __tests__/              Vitest unit tests, mirror source paths
 docs/                   long-form notes (agent-guide, etc.)
-.github/workflows/      CI (lint + test + build on PR)
+.github/workflows/      CI (lint + typecheck + test on PR)
 ```
 
 ### Error handling conventions

@@ -10,8 +10,12 @@ import { urlFor } from "@/sanity/lib/image";
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const slugs = await getPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = await getPostSlugs();
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [];
+  }
 }
 
 function formatDate(iso: string) {

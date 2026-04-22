@@ -43,7 +43,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 3. `npm run test:run`
 4. `npm run build` if touching Next config, routes, or server components.
 
-CI runs lint + typecheck + test + build on every PR (`.github/workflows/ci.yml`).
+CI runs lint + format:check + typecheck + test on every PR (`.github/workflows/ci.yml`). The production build runs on Vercel.
 
 ## Further reading
 
