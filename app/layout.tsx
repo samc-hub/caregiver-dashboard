@@ -47,6 +47,7 @@ export default function RootLayout({
                 alt="Vallige"
                 width={588}
                 height={231}
+                sizes="96px"
                 priority
                 className="h-8 w-auto transition-transform group-hover:scale-105"
               />
