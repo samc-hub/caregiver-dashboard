@@ -7,6 +7,7 @@ const navLinks = [
   { href: "/", label: "Dashboard" },
   { href: "/blog", label: "Blog" },
   { href: "/resources", label: "Resources" },
+  { href: "/studio", label: "Studio" },
 ];
 
 function isActive(pathname: string, href: string) {
