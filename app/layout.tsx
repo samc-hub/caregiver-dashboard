@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Inter, Fragment_Mono } from "next/font/google";
 import "./globals.css";
@@ -39,15 +40,16 @@ export default function RootLayout({
           <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6">
             <Link
               href="/"
-              className="group flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="group flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              <span
-                aria-hidden
-                className="inline-block h-2.5 w-2.5 rounded-full bg-accent-soft ring-2 ring-inset ring-accent/30 transition-transform group-hover:scale-110"
+              <Image
+                src="/vallige-logo.png"
+                alt="Vallige"
+                width={588}
+                height={231}
+                priority
+                className="h-8 w-auto transition-transform group-hover:scale-105"
               />
-              <span className="text-base font-medium tracking-tight">
-                Caregiver Dashboard
-              </span>
             </Link>
             <NavLinks />
           </div>

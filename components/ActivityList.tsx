@@ -8,8 +8,15 @@ export function ActivityList({
   if (!activities || activities.length === 0) {
     return <p className="text-sm text-muted">No activities logged yet.</p>;
   }
+  const scrollable = activities.length > 4;
   return (
-    <ul className="divide-y divide-border">
+    <ul
+      className={
+        scrollable
+          ? "max-h-80 divide-y divide-border overflow-y-auto pr-1"
+          : "divide-y divide-border"
+      }
+    >
       {activities.map((a, i) => (
         <li
           key={`${a.title}-${i}`}

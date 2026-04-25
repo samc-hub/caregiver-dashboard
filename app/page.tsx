@@ -101,7 +101,13 @@ export default async function HomePage() {
         <DashboardCard tone="soft">
           <SectionHeader eyebrow="Watch for" title="Notes & flags" />
           {summary.notesOrFlags && summary.notesOrFlags.length > 0 ? (
-            <ul className="space-y-2">
+            <ul
+              className={
+                summary.notesOrFlags.length > 4
+                  ? "max-h-80 space-y-2 overflow-y-auto pr-1"
+                  : "space-y-2"
+              }
+            >
               {summary.notesOrFlags.map((note, i) => (
                 <li
                   key={i}
