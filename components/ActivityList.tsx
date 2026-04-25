@@ -1,3 +1,4 @@
+import { ScrollableUl } from "@/components/ScrollableUl";
 import type { Activity } from "@/sanity/lib/types";
 
 export function ActivityList({
@@ -10,7 +11,8 @@ export function ActivityList({
   }
   const scrollable = activities.length > 4;
   return (
-    <ul
+    <ScrollableUl
+      scrollable={scrollable}
       className={
         scrollable
           ? "max-h-80 divide-y divide-border overflow-y-auto pr-1"
@@ -33,6 +35,6 @@ export function ActivityList({
           </div>
         </li>
       ))}
-    </ul>
+    </ScrollableUl>
   );
 }

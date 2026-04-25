@@ -4,6 +4,7 @@ import { ActivityList } from "@/components/ActivityList";
 import { Container } from "@/components/Container";
 import { DashboardCard } from "@/components/DashboardCard";
 import { HeroBackground } from "@/components/HeroBackground";
+import { ScrollableUl } from "@/components/ScrollableUl";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StatusBadge } from "@/components/StatusBadge";
 import { getDailySummary } from "@/sanity/lib/fetch";
@@ -101,7 +102,8 @@ export default async function HomePage() {
         <DashboardCard tone="soft">
           <SectionHeader eyebrow="Watch for" title="Notes & flags" />
           {summary.notesOrFlags && summary.notesOrFlags.length > 0 ? (
-            <ul
+            <ScrollableUl
+              scrollable={summary.notesOrFlags.length > 4}
               className={
                 summary.notesOrFlags.length > 4
                   ? "max-h-80 space-y-2 overflow-y-auto pr-1"
@@ -120,7 +122,7 @@ export default async function HomePage() {
                   <span>{note}</span>
                 </li>
               ))}
-            </ul>
+            </ScrollableUl>
           ) : (
             <p className="text-sm text-muted">Nothing flagged for today.</p>
           )}
